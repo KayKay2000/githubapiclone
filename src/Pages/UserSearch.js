@@ -26,7 +26,7 @@ function UserSearch() {
       </label>
       <button type="submit">Add</button>
     </form>
-    
+  
     { users.map(user => <UserCard key={user.id} user={user} />)}
 
   </div>;

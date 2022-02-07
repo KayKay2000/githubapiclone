@@ -23,12 +23,12 @@ function IssueSearch() {
   return <div>
     <h1>Search for Issues Below</h1>
     <form onSubmit={handleSubmit}>
-      <label>Issue
+      <label>Issue:
       <input type="number" onChange={(e) => setIssue(e.target.value)} value={issue} />
       </label>
       <button type="submit">Add</button>
     </form>
-    {console.log(issueLists)}
+    {/* {console.log(issueLists)} */}
     {issueLists.map(issueList => <IssueCard key={issueList.number} issue={issueList} />)}
   </div>;
 

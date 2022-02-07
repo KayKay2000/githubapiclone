@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function IssueCard(props) {
-    
-    const {title, number, created_at} = props
+    // console.log(props)
+    const {title, number, user, created_at} = props.issue
 
-    if (!number) return
+    if (!number) return null
     
     return <div> 
             <h1> Issue number:<Link to ={`/issue-search/${number}`}> #{number}</Link>, {title}</h1>
-      <div>{created_at} by: {props.user.login}</div>
+        <div>{created_at} by: {user.login}</div>
     </div>;
 }
 
