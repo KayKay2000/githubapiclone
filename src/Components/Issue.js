@@ -1,4 +1,5 @@
 import React, { useState, Component, useEffect } from 'react'
+import RelativeDate from './RelativeDate';
 import IssueList from './IssueList'
 import styled from 'styled-components';
 import '../App.css'
@@ -35,11 +36,12 @@ export default function Issue(props){
 
     return (
         <Container>
+            {/* <h1>ISSUES</h1> */}
             <Section>
                 <Title>
                     🟢 &nbsp; {props.issue.title} {props.issue.labels && props.issue.labels.map((label, i) => { return <Button key={i} label={label.name}>{label.name}</Button> })}
                 </Title>
-                <Details >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#{props.issue.id} {props.issue.state} created at: {new Date(props.issue.created_at).toLocaleString()} by: {props.issue.user.login} comments: {props.issue.comments}</Details>
+                <Details >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#{props.issue.id} {props.issue.state} created at: {new Date(props.issue.created_at).toLocaleString()} (<RelativeDate date={props.issue.created_at}/>) by: {props.issue.user.login} comments: {props.issue.comments}</Details>
             </Section>
         </Container>
 
