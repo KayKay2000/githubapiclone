@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import UserCard from '../Components/UserCard';
 
 function UserSearch() {
+  //searching by username
   const [username, setUsername] = useState('')
   const [users, setUsers] = useState([])
 

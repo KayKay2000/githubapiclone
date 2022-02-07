@@ -13,6 +13,7 @@ import { BrowserRouter as Router,
         useNavigate
       } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
+import IssueDetail from './Pages/IssueDetail';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Route path="/" element={<Home />} />
         <Route path="/issues-list" element={<Issues />} />
         <Route path="/issue-search" element={ <IssueSearch />} />
+        <Route path="/issue-search/:issue" element={<IssueDetail />} />
         <Route path="/user-search" element={<UserSearch/>} />
         <Route path="/user-search/:username" element={<UserProfile />} />
         <Route path="*" element={<NotFound/>} />
