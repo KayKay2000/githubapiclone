@@ -14,16 +14,20 @@ import { BrowserRouter as Router,
       } from 'react-router-dom';
 import NotFound from './Pages/NotFound';
 import IssueDetail from './Pages/IssueDetail';
+import styled from 'styled-components';
 
+const Body = styled.div`
+display:flex;
+flex-direction: column`
 
 function App() {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const handleClick = () => {
-    navigate('/hello')
-  }
+  // const handleClick = () => {
+  //   navigate('/hello')
+  // }
   return (
-      <div className='app'>
+      <Body>
         <nav>
           <ul>
           <li><Link to="/">Home</Link></li>
@@ -33,6 +37,7 @@ function App() {
           </ul>
         </nav>
         {/* <button onClick={handleClick}>Go HOME!</button> */} 
+        <div>
       <Routes>
       <Route path="/" element={<Home />} />
         <Route path="/issues-list" element={<Issues />} />
@@ -44,6 +49,7 @@ function App() {
 
       </Routes>
       </div>
+      </Body>
   );
 }
 

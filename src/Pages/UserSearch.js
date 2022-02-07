@@ -18,7 +18,7 @@ function UserSearch() {
       })
   }
   
-  return <div>
+  return <div className="search">
     <h1>User Search</h1>
     <form onSubmit={handleSubmit}>
       <label>Username:

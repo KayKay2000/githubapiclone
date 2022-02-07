@@ -6,7 +6,7 @@ function UserCard(props) {
 
   const { name, login, avatar_url } = props.user
 
-  return <div>
+  return <div className="userCard">
     <h3>{name}</h3>
     <h4><Link to={`/user-search/${login}`}>{login}</Link></h4>
     <img src={avatar_url} alt="" width="50px" />

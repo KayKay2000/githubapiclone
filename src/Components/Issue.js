@@ -23,14 +23,14 @@ padding_top: 100px;
 `
 
 const Button = styled.button`
-background-color: ${props => props.label ==='issue: bug report' ?  'rgb(54, 35, 13)' : props.label ==='needs triage' ? 'rgb(67, 35, 55)' : props.label ==='issue: proposal' ? 'rgb(54, 47, 13)' : 'rgb(15, 33, 53)'};
-border: 1px solid ${props => props.label ==='issue: bug report' ?  'rgb(115, 64, 9)' : props.label ==='needs triage' ? 'rgb(115, 64, 9)' : props.label ==='issue: proposal' ? 'rgb(115, 94, 9)' : 'rgb(49, 152, 255)'};
+background-color: ${props => props.label === 'issue: bug report' ? 'rgb(54, 35, 13)' : props.label === 'needs triage' ? 'rgb(67, 35, 55)' : props.label === 'issue: proposal' ? 'rgb(54, 47, 13)' : 'rgb(15, 33, 53)'};
+border: 1px solid ${props => props.label === 'issue: bug report' ? 'rgb(115, 64, 9)' : props.label === 'needs triage' ? 'rgb(115, 64, 9)' : props.label === 'issue: proposal' ? 'rgb(115, 94, 9)' : 'rgb(49, 152, 255)'};
 border-radius: 10px;
-color: ${props => props.label ==='issue: bug report' ?  'rgb(255, 132, 0)' : props.label ==='needs triage' ? 'rgb(245, 138, 170)' : props.label ==='issue: proposal' ? 'rgb(241, 193, 1)' : 'rgb(49, 152, 255)'};
+color: ${props => props.label === 'issue: bug report' ? 'rgb(255, 132, 0)' : props.label === 'needs triage' ? 'rgb(245, 138, 170)' : props.label === 'issue: proposal' ? 'rgb(241, 193, 1)' : 'rgb(49, 152, 255)'};
 font-weight: bold;`
 
-export default function Issue(props){
-    if (!props.issue){
+export default function Issue(props) {
+    if (!props.issue) {
         return null
     }
 
@@ -41,7 +41,7 @@ export default function Issue(props){
                 <Title>
                     🟢 &nbsp; {props.issue.title} {props.issue.labels && props.issue.labels.map((label, i) => { return <Button key={i} label={label.name}>{label.name}</Button> })}
                 </Title>
-                <Details >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#{props.issue.id} {props.issue.state} created at: {new Date(props.issue.created_at).toLocaleString()} (<RelativeDate date={props.issue.created_at}/>) by: {props.issue.user.login} comments: {props.issue.comments}</Details>
+                <Details >&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#{props.issue.id} {props.issue.state} created at: {new Date(props.issue.created_at).toLocaleString()} (<RelativeDate date={props.issue.created_at} />) by: {props.issue.user.login} comments: {props.issue.comments}</Details>
             </Section>
         </Container>
 

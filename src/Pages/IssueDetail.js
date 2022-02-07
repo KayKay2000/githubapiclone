@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useParams} from 'react-router-dom';
 
 function IssueDetail() {
     const params = useParams()
     const [issue, setIssue] = useState(null)
-    // console.log(params)
     useEffect(() => {
         fetch(`https://api.github.com/repos/facebook/create-react-app/issues/${params.issue}`)
         .then(res => res.json())
         .then(data => {
             if (data.message === 'Not Found') return
-            // console.log(data)
             setIssue(data)
         })
     }, [params.issue])
@@ -28,10 +25,3 @@ function IssueDetail() {
 
 export default IssueDetail;
 
-
-
-//title (props.title)
-//issue number (props.number)
-//username (props.user.login)
-//Date created (props.created_at)
-//issue body/description (props.body)
